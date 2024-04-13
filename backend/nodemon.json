@@ -1,0 +1,14 @@
+{
+  "ext": "ts,json",
+  "exec": "ts-node -r tsconfig-paths/register ./src/server.ts",
+  "ignore": [
+    "node_modules",
+    "build"
+  ],
+  "watch": [
+    ".env",
+    "src",
+    "tsconfig.json",
+    "tsconfig.node.json"
+  ]
+}

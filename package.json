@@ -1,0 +1,17 @@
+{
+  "name": "ui-sample",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently \"cd backend && npm run dev\" \"cd frontend && npm start\""
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "dependencies": {
+    "@angular/material": "^17.3.4"
+  }
+}

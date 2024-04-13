@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@configs/*": ["src/configs/*"],
+      "@constants/*": ["src/constants/*"],
+      "@controllers/*": ["src/controllers/*"],
+      "@database/*": ["src/database/*"],
+      "@handlers/*": ["src/handlers/*"],
+      "@helpers/*": ["src/helpers/*"],
+      "@libs/*": ["src/libs/*"],
+      "@middlewares/*": ["src/middlewares/*"],
+      "@models/*": ["src/models/*"],
+      "@routes/*": ["src/routes/*"],
+      "@services/*": ["src/services/*"],
+      "@utils/*": ["src/utils/*"],
+      "@views/*": ["src/views/*"]
+    }
+  },
+  "files": ["src/types/index.d.ts"],
+  "include": ["src"],
+  "exclude": ["build", "node_modules"]
+}
