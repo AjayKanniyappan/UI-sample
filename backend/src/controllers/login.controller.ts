@@ -14,13 +14,21 @@ async function loginController(req: Request, res: Response) {
    * Request body 👇
    */
   const { email, password } = req.body;
-  const user = await db?.findOne({ email });
+  const user: any = await db?.findOne({ email });
+
+  if (!user) {
+    return res.status(401).send({ success: false, message: 'Invalid email' });
+  }
+
   const valid = await checkPassword(password, user?.password as string); // 👈 Check password
+
   if (user && valid) {
     const authToken = generateToken(user?.email, '1d'); // 👈 Generate JWT auth token
-    res.status(200).send({ success: true, message: 'Logged in successfully', token: authToken });
+    return res
+      .status(200)
+      .send({ success: true, message: 'Logged in successfully', token: authToken });
   } else {
-    res.status(401).send({ success: false, message: 'Invalid email or password' });
+    return res.status(401).send({ success: false, message: 'Invalid email or password' });
   }
 }
 

@@ -1,0 +1,16 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  mat-card {
+    padding: 50px;
+  }
+
+  mat-card-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+}

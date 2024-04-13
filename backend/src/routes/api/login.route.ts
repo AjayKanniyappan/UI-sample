@@ -9,11 +9,11 @@ loginRouter.all('/', (req: Request, res: Response) => {
     try {
       loginController(req, res);
     } catch (error) {
-      res.status(500).send({ success: false, message: 'Internal Server Error' });
       logger.error(error);
+      return res.status(500).send({ success: false, message: 'Internal Server Error' });
     }
   } else {
-    res.status(405).send({ success: false, message: 'Method Not Allowed' });
+    return res.status(405).send({ success: false, message: 'Method Not Allowed' });
   }
 });
 
